@@ -1,4 +1,4 @@
-//COMBINATORIA DE CARACTERES
+					//COMBINATORIA DE CARACTERES 		**COMBINATORIA DE 0 A 3  :(
 #include <iostream>
 using namespace std;
 
@@ -15,40 +15,40 @@ int comb(char variable[], int a, int b)
 {
 	switch (b){
 		case 0:{
-			cout << "La unica combinatoria es:\n";
+			cout << "\n** La unica combinatoria es:\n";
 			for (int i=0;i<a;i++)
 				cout << variable[i];break;
 		}
 		case 1:{
-			cout << "Y estas son sus combinaciones:\n";
+			cout << "\n** Y estas son sus combinaciones:\n";
 			for (int i=0;i<a+1-1;i++)
-				cout << variable[i]<<" ";break;
+				cout << variable[i]<<"  ";break;
 		}
 		case 2:{
-			cout <<"Y estas son sus combinaciones:\n";
+			cout <<"\n** Y estas son sus combinaciones:\n";
 			for (int i=0;i<a-1;i++){
-				cout <<variable[i]<<variable[i+1]<<"xxxx";//4
+				cout <<variable[i]<<variable[i+1]<<" ";
 				for (int j=i+1;j<a-1;j++)
-					cout <<variable[i]<<variable[j+1]<<"yyyy";//6
+					cout <<variable[i]<<variable[j+1]<<" ";
 			}break;
 		}
 		case 3:{
-			cout <<"Y estas son sus combinaciones:\n";
+			cout <<"\n** Y estas son sus combinaciones:\n";
 			for (int i=0;i<a-2;i++){
-				cout <<variable[i]<<variable[i+1]<<variable[i+2]<<" ";//3
+				cout <<variable[i]<<variable[i+1]<<variable[i+2]<<" ";
 				for (int j=i+1;j<a-2;j++){
-					cout <<variable[i]<<variable[j+1]<<variable[j+2]<<" ";//3
+					cout <<variable[i]<<variable[j+1]<<variable[j+2]<<" ";
 					for (int k=j+1;k<a-1;k++)
-						cout <<variable[i]<<variable[j]<<variable[k+1]<<" ";//1
+						cout <<variable[i]<<variable[j]<<variable[k+1]<<" ";
 				}
 			}break;
 		}
-		case 4:{
+/*		case 4:{
 			
 			break;
 		}
-		default:
-			cout << "PERO LA COMBINATORIA NO ESTA DENTRO DEL RANGO";
+*/		default:
+			cout << "\n** Pero la combinatoria no esta disponible :(\n";
 	}
 }
 
@@ -64,13 +64,17 @@ int main()
 	if (a>b && b>=0){
 		z = fact(a)/fact(a-b)/fact(b);
 		//cout <<fact(a)<<endl<<fact(a-b)<<endl<<fact(b)<<endl;
-		cout << "Tiene " << z << " posible(s) combinatoria(s)"<<endl;
+		cout << "\n** Tiene " << z << " posible(s) combinatoria(s)"<<endl;
 		comb (variable,a,b);
+		cout<<endl;
 	}
-	else if (a==b)
+	else if (a==b){
 		comb(variable,a,0);
+		cout<<endl;
+	}
 	else
-		cout << "DATOS INVALIDOS";
-	
+		cout << "\n** DATOS INVALIDOS\n";
+	cout << endl;
+	system("pause");
 	return 0;
 }
